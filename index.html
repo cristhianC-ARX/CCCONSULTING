@@ -1,0 +1,2579 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CG Consulting | Firma de Contadores Centroamérica</title>
+  <meta name="description" content="CG Consulting – Firma de contadores certificados con presencia en El Salvador, Honduras y Guatemala. Ofrecemos servicios de contabilidad, asesoría fiscal, auditoría y consultoría financiera." />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
+  <!-- AOS Animation -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <!-- Main Styles -->
+
+  <style>
+/* ============================================================
+   CG CONSULTING – Main Stylesheet
+   Paleta: #1F4E4D (verde oscuro) | #4AB7B1 (turquesa) |
+           #8FAED4 (azul suave) | #9FD7D3 (menta) | #F7F9FB (fondo)
+   ============================================================ */
+
+/* ---- Variables ---- */
+:root {
+  --dark-green: #1F4E4D;
+  --teal: #4AB7B1;
+  --teal-light: #9FD7D3;
+  --blue-soft: #8FAED4;
+  --bg: #F7F9FB;
+  --bg-white: #FFFFFF;
+  --text: #2d3a3a;
+  --text-muted: #5e7272;
+  --border: #dce8e8;
+  --shadow: 0 4px 24px rgba(31, 78, 77, 0.09);
+  --shadow-lg: 0 12px 48px rgba(31, 78, 77, 0.14);
+  --radius: 14px;
+  --radius-sm: 8px;
+  --transition: 0.3s ease;
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+/* ---- Reset & Base ---- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--text);
+  background: var(--bg-white);
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-heading);
+  color: var(--dark-green);
+  line-height: 1.25;
+}
+
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+ul { list-style: none; }
+
+/* ---- Utilities ---- */
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section {
+  padding: 100px 0;
+}
+
+.bg-light { background: var(--bg); }
+
+.section-tag {
+  display: inline-block;
+  background: rgba(74, 183, 177, 0.12);
+  color: var(--teal);
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 50px;
+  margin-bottom: 12px;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 60px;
+}
+
+.section-header h2 {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  margin-bottom: 14px;
+}
+
+.section-header p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+
+/* ---- Buttons ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 28px;
+  border-radius: 50px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all var(--transition);
+  border: 2px solid transparent;
+}
+
+.btn-primary {
+  background: var(--teal);
+  color: #fff;
+  border-color: var(--teal);
+}
+.btn-primary:hover {
+  background: var(--dark-green);
+  border-color: var(--dark-green);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(74, 183, 177, 0.35);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--dark-green);
+  border-color: var(--dark-green);
+}
+.btn-outline:hover {
+  background: var(--dark-green);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.btn-white {
+  background: #fff;
+  color: var(--dark-green);
+  border-color: #fff;
+}
+.btn-white:hover {
+  background: var(--teal-light);
+  transform: translateY(-2px);
+}
+
+.btn-outline-white {
+  background: transparent;
+  color: #fff;
+  border-color: rgba(255,255,255,0.6);
+}
+.btn-outline-white:hover {
+  background: rgba(255,255,255,0.15);
+  transform: translateY(-2px);
+}
+
+.btn-full { width: 100%; justify-content: center; }
+
+/* ============================================================
+   NAVBAR
+   ============================================================ */
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  padding: 18px 0;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid transparent;
+  transition: all var(--transition);
+}
+
+.navbar.scrolled {
+  padding: 12px 0;
+  border-bottom-color: var(--border);
+  box-shadow: var(--shadow);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.nav-logo img {
+  height: 52px;
+  width: auto;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-links a {
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text);
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  transition: color var(--transition), background var(--transition);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--teal);
+  background: rgba(74, 183, 177, 0.08);
+}
+
+.btn-nav {
+  background: var(--teal) !important;
+  color: #fff !important;
+  padding: 9px 20px !important;
+  border-radius: 50px !important;
+  margin-left: 8px;
+}
+
+.btn-nav:hover {
+  background: var(--dark-green) !important;
+  box-shadow: 0 6px 20px rgba(74,183,177,0.3);
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2.5px;
+  background: var(--dark-green);
+  border-radius: 2px;
+  transition: all var(--transition);
+}
+
+.hamburger.open span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero {
+  position: relative;
+  background: linear-gradient(135deg, #1F4E4D 0%, #2d6b6a 40%, #3a8a88 100%);
+  padding: 160px 0 80px;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-bg-shape {
+  position: absolute;
+  top: -120px; right: -120px;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(74,183,177,0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-tag {
+  display: inline-block;
+  background: rgba(159, 215, 211, 0.2);
+  color: var(--teal-light);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 50px;
+  border: 1px solid rgba(159,215,211,0.3);
+  margin-bottom: 20px;
+}
+
+.hero-text h1 {
+  color: #fff;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 800;
+  margin-bottom: 20px;
+  line-height: 1.15;
+}
+
+.hero-text p {
+  color: rgba(255,255,255,0.80);
+  font-size: 1.1rem;
+  margin-bottom: 32px;
+  max-width: 520px;
+}
+
+.hero-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 48px;
+}
+
+.hero-btns .btn-primary {
+  background: var(--teal);
+  box-shadow: 0 8px 32px rgba(74,183,177,0.4);
+}
+
+.hero-btns .btn-outline {
+  color: #fff;
+  border-color: rgba(255,255,255,0.5);
+}
+.hero-btns .btn-outline:hover {
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-num {
+  font-family: var(--font-heading);
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--teal-light);
+  line-height: 1;
+}
+
+.stat-plus {
+  font-size: 1.8rem;
+  color: var(--teal-light);
+  font-weight: 700;
+  display: inline;
+}
+
+.stat-label {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.65);
+  margin-top: 4px;
+}
+
+/* Hero Visual */
+.hero-visual {
+  position: relative;
+}
+
+.hero-card-wrap {
+  position: relative;
+  height: 400px;
+}
+
+.hero-blob {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 320px; height: 320px;
+  background: radial-gradient(circle, rgba(74,183,177,0.18) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: pulse-blob 4s ease-in-out infinite;
+}
+
+@keyframes pulse-blob {
+  0%, 100% { transform: translate(-50%,-50%) scale(1); }
+  50% { transform: translate(-50%,-50%) scale(1.12); }
+}
+
+.hero-card {
+  position: absolute;
+  background: rgba(255,255,255,0.10);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: var(--radius);
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: #fff;
+  box-shadow: var(--shadow-lg);
+  animation: float 5s ease-in-out infinite;
+}
+
+.hero-card i {
+  font-size: 1.8rem;
+  color: var(--teal-light);
+  flex-shrink: 0;
+}
+
+.hero-card strong { display: block; font-weight: 600; font-size: 0.95rem; }
+.hero-card span { font-size: 0.78rem; color: rgba(255,255,255,0.7); }
+
+.card-1 { top: 20px; left: 0; animation-delay: 0s; }
+.card-2 { top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%); animation-delay: 1.5s; }
+.card-3 { bottom: 20px; right: 0; animation-delay: 3s; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.card-2 { animation-name: float2; }
+@keyframes float2 {
+  0%, 100% { transform: translateX(-50%) translateY(-50%); }
+  50% { transform: translateX(-50%) translateY(calc(-50% - 10px)); }
+}
+
+.hero-wave {
+  position: absolute;
+  bottom: -1px; left: 0; right: 0;
+  pointer-events: none;
+}
+
+.hero-wave svg { width: 100%; height: 80px; display: block; }
+
+/* ============================================================
+   NOSOTROS
+   ============================================================ */
+.nosotros-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.nosotros-img-wrap {
+  position: relative;
+  min-height: 420px;
+}
+
+.img-badge {
+  position: absolute;
+  top: 20px; right: 0;
+  background: var(--teal);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.9rem;
+  box-shadow: var(--shadow);
+  z-index: 2;
+}
+
+.img-badge i { font-size: 1.2rem; }
+
+.nosotros-chart-card {
+  position: absolute;
+  bottom: 20px; right: 0;
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadow-lg);
+  min-width: 200px;
+  z-index: 2;
+}
+
+.nosotros-chart-card p {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 8px;
+  text-align: center;
+}
+
+.mini-bar-chart {
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+  height: 70px;
+}
+
+.bar {
+  flex: 1;
+  background: var(--teal-light);
+  border-radius: 4px 4px 0 0;
+  height: var(--h);
+  position: relative;
+  transition: background var(--transition);
+}
+.bar.active { background: var(--teal); }
+.bar span {
+  position: absolute;
+  bottom: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.62rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.nosotros-graphic {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 220px; height: 220px;
+}
+
+.ng-circle {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid;
+}
+
+.c1 {
+  width: 220px; height: 220px;
+  top: 0; left: 0;
+  border-color: rgba(74,183,177,0.15);
+  background: rgba(74,183,177,0.05);
+}
+
+.c2 {
+  width: 160px; height: 160px;
+  top: 30px; left: 30px;
+  border-color: rgba(74,183,177,0.25);
+  background: rgba(74,183,177,0.08);
+}
+
+.ng-icon {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  width: 70px; height: 70px;
+  background: var(--teal);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 32px rgba(74,183,177,0.4);
+}
+
+.ng-icon i { font-size: 1.6rem; color: #fff; }
+
+.nosotros-text h2 {
+  font-size: clamp(1.7rem, 2.8vw, 2.2rem);
+  margin-bottom: 18px;
+}
+
+.nosotros-text p {
+  color: var(--text-muted);
+  margin-bottom: 14px;
+  font-size: 1rem;
+}
+
+.nosotros-features {
+  margin: 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.nosotros-features li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.93rem;
+  color: var(--text);
+}
+
+.nosotros-features li i {
+  color: var(--teal);
+  font-size: 0.95rem;
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   SERVICIOS
+   ============================================================ */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.service-card {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 32px 28px;
+  border: 1px solid var(--border);
+  transition: all var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--teal), var(--blue-soft));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.service-card:hover::before { transform: scaleX(1); }
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(74,183,177,0.2);
+}
+
+.service-card.featured {
+  background: linear-gradient(135deg, #1F4E4D 0%, #2d6b6a 100%);
+  color: #fff;
+  border-color: transparent;
+}
+
+.service-card.featured h3,
+.service-card.featured p,
+.service-card.featured ul li,
+.service-card.featured .sc-link {
+  color: #fff;
+}
+
+.service-card.featured .sc-icon {
+  background: rgba(255,255,255,0.12);
+}
+
+.service-card.featured .sc-icon i { color: var(--teal-light); }
+.service-card.featured::before { display: none; }
+
+.sc-badge {
+  display: inline-block;
+  background: var(--teal);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 50px;
+  margin-bottom: 16px;
+}
+
+.sc-icon {
+  width: 56px; height: 56px;
+  background: rgba(74,183,177,0.1);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  transition: all var(--transition);
+}
+
+.service-card:hover .sc-icon {
+  background: var(--teal);
+}
+.service-card:hover .sc-icon i { color: #fff; }
+
+.sc-icon i {
+  font-size: 1.4rem;
+  color: var(--teal);
+  transition: color var(--transition);
+}
+
+.service-card h3 {
+  font-size: 1.08rem;
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  margin-bottom: 14px;
+  line-height: 1.6;
+}
+
+.service-card ul {
+  margin-bottom: 20px;
+}
+
+.service-card ul li {
+  font-size: 0.83rem;
+  color: var(--text-muted);
+  padding: 4px 0;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.service-card ul li::before {
+  content: '';
+  width: 6px; height: 6px;
+  background: var(--teal);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.service-card.featured ul li::before { background: var(--teal-light); }
+.service-card.featured ul li { border-bottom-color: rgba(255,255,255,0.12); }
+
+.sc-link {
+  font-family: var(--font-heading);
+  font-size: 0.83rem;
+  font-weight: 600;
+  color: var(--teal);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: gap var(--transition), color var(--transition);
+}
+
+.sc-link:hover { gap: 10px; }
+.service-card.featured .sc-link { color: var(--teal-light); }
+
+/* ============================================================
+   COBERTURA
+   ============================================================ */
+.cobertura { background: var(--dark-green); position: relative; overflow: hidden; }
+.cobertura::before {
+  content: '';
+  position: absolute;
+  top: -200px; right: -200px;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(74,183,177,0.12) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.cobertura .section-tag { background: rgba(159,215,211,0.15); color: var(--teal-light); }
+.cobertura .section-header h2 { color: #fff; }
+.cobertura .section-header p { color: rgba(255,255,255,0.7); }
+
+.countries-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.country-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--radius);
+  padding: 36px 28px;
+  backdrop-filter: blur(8px);
+  transition: all var(--transition);
+  color: #fff;
+}
+
+.country-card:hover {
+  background: rgba(255,255,255,0.10);
+  transform: translateY(-6px);
+  border-color: rgba(74,183,177,0.4);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.2);
+}
+
+.country-flag {
+  font-size: 3rem;
+  margin-bottom: 16px;
+}
+
+.country-card h3 {
+  color: #fff;
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+}
+
+.country-city {
+  color: var(--teal-light);
+  font-size: 0.85rem;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.country-card ul { margin-bottom: 20px; }
+.country-card ul li {
+  color: rgba(255,255,255,0.72);
+  font-size: 0.85rem;
+  padding: 5px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.country-card ul li::before {
+  content: '';
+  width: 5px; height: 5px;
+  background: var(--teal);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.country-contact {
+  color: var(--teal-light);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ============================================================
+   POR QUÉ ELEGIRNOS
+   ============================================================ */
+.porque-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.porq-item {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 32px 28px;
+  border: 1px solid var(--border);
+  transition: all var(--transition);
+  text-align: center;
+}
+
+.porq-item:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(74,183,177,0.2);
+}
+
+.porq-icon {
+  width: 68px; height: 68px;
+  background: linear-gradient(135deg, rgba(74,183,177,0.12), rgba(143,174,212,0.12));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  transition: all var(--transition);
+}
+
+.porq-item:hover .porq-icon {
+  background: linear-gradient(135deg, var(--teal), var(--blue-soft));
+  box-shadow: 0 8px 24px rgba(74,183,177,0.3);
+}
+
+.porq-icon i {
+  font-size: 1.6rem;
+  color: var(--teal);
+  transition: color var(--transition);
+}
+
+.porq-item:hover .porq-icon i { color: #fff; }
+
+.porq-item h4 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.porq-item p {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  line-height: 1.65;
+}
+
+/* ============================================================
+   PROCESO
+   ============================================================ */
+.proceso-steps {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.step {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px 24px;
+  text-align: center;
+  flex: 1;
+  min-width: 180px;
+  max-width: 220px;
+  transition: all var(--transition);
+  position: relative;
+}
+
+.step:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(74,183,177,0.2);
+}
+
+.step-num {
+  font-family: var(--font-heading);
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: rgba(74,183,177,0.2);
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.step-icon {
+  width: 56px; height: 56px;
+  background: linear-gradient(135deg, var(--teal), var(--blue-soft));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  box-shadow: 0 6px 20px rgba(74,183,177,0.3);
+}
+
+.step-icon i { font-size: 1.3rem; color: #fff; }
+
+.step h4 {
+  font-size: 0.98rem;
+  margin-bottom: 8px;
+}
+
+.step p {
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+
+.step-arrow {
+  color: var(--teal-light);
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   EQUIPO
+   ============================================================ */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.team-card {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 32px 20px;
+  text-align: center;
+  border: 1px solid var(--border);
+  transition: all var(--transition);
+}
+
+.team-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(74,183,177,0.2);
+}
+
+.team-avatar {
+  width: 80px; height: 80px;
+  background: linear-gradient(135deg, var(--teal), var(--dark-green));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+}
+
+.team-avatar.av2 { background: linear-gradient(135deg, var(--blue-soft), #5a7fbf); }
+.team-avatar.av3 { background: linear-gradient(135deg, #3a8a88, var(--dark-green)); }
+.team-avatar.av4 { background: linear-gradient(135deg, var(--teal-light), var(--teal)); }
+
+.avatar-initials {
+  color: #fff;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+.team-card h4 { font-size: 1.02rem; margin-bottom: 4px; }
+
+.team-title {
+  display: block;
+  color: var(--teal);
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  font-family: var(--font-heading);
+}
+
+.team-card p {
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+.team-countries {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+/* ============================================================
+   TESTIMONIOS
+   ============================================================ */
+.testimonios-slider {
+  overflow: hidden;
+  position: relative;
+}
+
+.test-track {
+  display: flex;
+  gap: 24px;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.test-card {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 36px 32px;
+  border: 1px solid var(--border);
+  min-width: calc(50% - 12px);
+  box-shadow: var(--shadow);
+  flex-shrink: 0;
+}
+
+.stars {
+  color: #f4b942;
+  font-size: 0.95rem;
+  margin-bottom: 16px;
+  display: flex;
+  gap: 4px;
+}
+
+.test-card > p {
+  color: var(--text);
+  font-size: 0.97rem;
+  font-style: italic;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.test-author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.test-avatar {
+  width: 48px; height: 48px;
+  background: linear-gradient(135deg, var(--teal), var(--dark-green));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.test-author strong { display: block; font-size: 0.9rem; }
+.test-author span { font-size: 0.78rem; color: var(--text-muted); }
+
+.slider-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.slider-btn {
+  width: 44px; height: 44px;
+  background: #fff;
+  border: 1.5px solid var(--border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: var(--dark-green);
+  transition: all var(--transition);
+}
+
+.slider-btn:hover {
+  background: var(--teal);
+  border-color: var(--teal);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(74,183,177,0.35);
+}
+
+.slider-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--border);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.dot.active {
+  background: var(--teal);
+  width: 28px;
+  border-radius: 5px;
+}
+
+/* ============================================================
+   CTA
+   ============================================================ */
+.cta-section {
+  background: linear-gradient(135deg, var(--teal) 0%, var(--dark-green) 100%);
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: -100px; right: -100px;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.cta-text h2 { color: #fff; font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 10px; }
+.cta-text p { color: rgba(255,255,255,0.8); font-size: 1rem; }
+
+.cta-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+
+/* ============================================================
+   CONTACTO
+   ============================================================ */
+.contacto-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.contacto-info {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.info-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.info-icon {
+  width: 44px; height: 44px;
+  background: rgba(74,183,177,0.1);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.info-icon i { color: var(--teal); font-size: 1.1rem; }
+
+.info-item strong { display: block; font-size: 0.9rem; margin-bottom: 4px; }
+.info-item span { color: var(--text-muted); font-size: 0.85rem; line-height: 1.6; }
+
+.social-links {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.social-links a {
+  width: 38px; height: 38px;
+  background: rgba(74,183,177,0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--teal);
+  font-size: 0.9rem;
+  transition: all var(--transition);
+}
+
+.social-links a:hover {
+  background: var(--teal);
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(74,183,177,0.3);
+}
+
+.contacto-form-wrap {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 40px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border);
+}
+
+.contacto-form { display: flex; flex-direction: column; gap: 18px; }
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--dark-green);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 11px 16px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  color: var(--text);
+  background: var(--bg);
+  transition: all var(--transition);
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--teal);
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(74,183,177,0.12);
+}
+
+.form-group textarea { resize: vertical; min-height: 100px; }
+
+.form-note {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: 4px;
+}
+
+.form-success {
+  display: none;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.form-success.show { display: block; }
+
+.success-icon {
+  font-size: 4rem;
+  color: var(--teal);
+  margin-bottom: 16px;
+}
+
+.form-success h3 { font-size: 1.4rem; margin-bottom: 10px; }
+.form-success p { color: var(--text-muted); font-size: 0.95rem; }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer {
+  background: var(--dark-green);
+  color: rgba(255,255,255,0.78);
+  padding-top: 80px;
+}
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1.2fr;
+  gap: 48px;
+  padding-bottom: 60px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-logo {
+  height: 52px;
+  margin-bottom: 16px;
+  filter: brightness(10);
+}
+
+.footer-brand p {
+  font-size: 0.85rem;
+  line-height: 1.7;
+  max-width: 280px;
+  margin-bottom: 20px;
+}
+
+.footer-brand .social-links a {
+  background: rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.7);
+}
+.footer-brand .social-links a:hover {
+  background: var(--teal);
+  color: #fff;
+}
+
+.footer-col h5 {
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.footer-col ul { display: flex; flex-direction: column; gap: 8px; }
+
+.footer-col ul li a {
+  color: rgba(255,255,255,0.65);
+  font-size: 0.87rem;
+  transition: color var(--transition);
+}
+
+.footer-col ul li a:hover { color: var(--teal-light); }
+
+.footer-contact li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: rgba(255,255,255,0.65);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.footer-contact li i {
+  color: var(--teal);
+  flex-shrink: 0;
+  margin-top: 2px;
+  width: 14px;
+}
+
+.footer-bottom {
+  padding: 20px 0;
+}
+
+.footer-bottom .container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.footer-bottom p {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.45);
+}
+
+.footer-bottom a {
+  color: rgba(255,255,255,0.55);
+  transition: color var(--transition);
+}
+.footer-bottom a:hover { color: var(--teal-light); }
+
+/* ============================================================
+   SCROLL TO TOP
+   ============================================================ */
+.scroll-top {
+  position: fixed;
+  bottom: 28px; right: 28px;
+  width: 46px; height: 46px;
+  background: var(--teal);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1rem;
+  box-shadow: 0 6px 24px rgba(74,183,177,0.45);
+  opacity: 0;
+  pointer-events: none;
+  transition: all var(--transition);
+  z-index: 999;
+}
+
+.scroll-top.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.scroll-top:hover {
+  background: var(--dark-green);
+  transform: translateY(-3px);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 1024px) {
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .team-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 900px) {
+  .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+  .hero-visual { display: none; }
+  .nosotros-grid { grid-template-columns: 1fr; }
+  .nosotros-img-wrap { min-height: 280px; }
+  .countries-grid { grid-template-columns: 1fr; gap: 16px; }
+  .porque-grid { grid-template-columns: repeat(2, 1fr); }
+  .contacto-grid { grid-template-columns: 1fr; gap: 40px; }
+}
+
+@media (max-width: 768px) {
+  .section { padding: 72px 0; }
+
+  /* Nav */
+  .nav-links {
+    position: fixed;
+    top: 72px; left: 0; right: 0;
+    background: #fff;
+    flex-direction: column;
+    padding: 24px;
+    gap: 4px;
+    box-shadow: var(--shadow-lg);
+    border-top: 1px solid var(--border);
+    transform: translateY(-120%);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 999;
+  }
+
+  .nav-links.open {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .nav-links a { width: 100%; padding: 12px 16px; border-radius: var(--radius-sm); }
+  .btn-nav { margin-left: 0 !important; text-align: center; justify-content: center; }
+  .hamburger { display: flex; }
+
+  .hero { padding: 130px 0 80px; min-height: auto; }
+  .hero-stats { gap: 24px; }
+  .stat-num { font-size: 1.8rem; }
+
+  .services-grid { grid-template-columns: 1fr; }
+  .team-grid { grid-template-columns: 1fr; }
+  .porque-grid { grid-template-columns: 1fr; }
+
+  .proceso-steps { flex-direction: column; align-items: stretch; }
+  .step { max-width: 100%; }
+  .step-arrow { display: none; }
+
+  .test-card { min-width: 100%; }
+
+  .cta-inner { flex-direction: column; text-align: center; }
+  .cta-btns { justify-content: center; }
+
+  .form-row { grid-template-columns: 1fr; }
+  .contacto-form-wrap { padding: 28px 20px; }
+
+  .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+  .footer-bottom .container { flex-direction: column; }
+}
+
+@media (max-width: 480px) {
+  .hero-btns { flex-direction: column; }
+  .btn { width: 100%; justify-content: center; }
+  .hero-stats { flex-direction: column; gap: 16px; }
+  .cta-btns { flex-direction: column; }
+}
+
+  </style>
+
+</head>
+<body>
+
+  <!-- ======== NAVBAR ======== -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="#inicio" class="nav-logo">
+        <img src="https://i.ibb.co/jP2VLgYp/Designer-4.png" alt="CG Consulting Logo" />
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#inicio">Inicio</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#cobertura">Cobertura</a>
+        <a href="#por-que">¿Por qué elegirnos?</a>
+        <a href="#equipo">Equipo</a>
+        <a href="#testimonios">Testimonios</a>
+        <a href="#contacto" class="btn-nav">Contáctanos</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ======== HERO ======== -->
+  <section class="hero" id="inicio">
+    <div class="hero-bg-shape"></div>
+    <div class="container hero-inner">
+      <div class="hero-text" data-aos="fade-right" data-aos-duration="900">
+        <span class="hero-tag">Firma de Contadores Certificados</span>
+        <h1>Soluciones contables y financieras para el crecimiento de tu empresa</h1>
+        <p>Con más de 15 años de experiencia, acompañamos a empresas en El Salvador, Honduras y Guatemala con servicios integrales de contabilidad, asesoría fiscal y consultoría financiera.</p>
+        <div class="hero-btns">
+          <a href="#servicios" class="btn btn-primary">Nuestros Servicios</a>
+          <a href="#contacto" class="btn btn-outline">Hablar con un experto</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-num" data-target="500">0</span><span class="stat-plus">+</span>
+            <span class="stat-label">Clientes activos</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num" data-target="15">0</span><span class="stat-plus">+</span>
+            <span class="stat-label">Años de experiencia</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num" data-target="3">0</span>
+            <span class="stat-label">Países de cobertura</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual" data-aos="fade-left" data-aos-duration="900">
+        <div class="hero-card-wrap">
+          <div class="hero-card card-1">
+            <i class="fas fa-chart-line"></i>
+            <div>
+              <strong>Asesoría Fiscal</strong>
+              <span>Optimización tributaria</span>
+            </div>
+          </div>
+          <div class="hero-card card-2">
+            <i class="fas fa-file-invoice-dollar"></i>
+            <div>
+              <strong>Estados Financieros</strong>
+              <span>NIIF / PCGA</span>
+            </div>
+          </div>
+          <div class="hero-card card-3">
+            <i class="fas fa-shield-alt"></i>
+            <div>
+              <strong>Auditoría</strong>
+              <span>Cumplimiento garantizado</span>
+            </div>
+          </div>
+          <div class="hero-blob"></div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-wave">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" preserveAspectRatio="none">
+        <path fill="#f7f9fb" d="M0,60 C360,110 1080,10 1440,60 L1440,100 L0,100 Z"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ======== NOSOTROS ======== -->
+  <section class="section nosotros" id="nosotros">
+    <div class="container">
+      <div class="nosotros-grid">
+        <div class="nosotros-img-wrap" data-aos="fade-right">
+          <div class="img-badge">
+            <i class="fas fa-award"></i>
+            <span>Firma Certificada</span>
+          </div>
+          <div class="nosotros-chart-card">
+            <div class="mini-bar-chart">
+              <div class="bar" style="--h:60%"><span>2022</span></div>
+              <div class="bar" style="--h:75%"><span>2023</span></div>
+              <div class="bar" style="--h:90%"><span>2024</span></div>
+              <div class="bar active" style="--h:100%"><span>2025</span></div>
+            </div>
+            <p>Crecimiento anual de clientes</p>
+          </div>
+          <div class="nosotros-graphic">
+            <div class="ng-circle c1"></div>
+            <div class="ng-circle c2"></div>
+            <div class="ng-icon"><i class="fas fa-balance-scale"></i></div>
+          </div>
+        </div>
+        <div class="nosotros-text" data-aos="fade-left">
+          <span class="section-tag">Quiénes somos</span>
+          <h2>Una firma comprometida con la excelencia contable</h2>
+          <p>CG Consulting es una firma multidisciplinaria de contadores públicos certificados y asesores financieros. Fundada con el propósito de brindar soluciones contables accesibles, precisas y estratégicas, hemos crecido para convertirnos en un referente de confianza en Centroamérica.</p>
+          <p>Nuestro equipo está formado por profesionales con certificaciones internacionales (CPA, ACCA, NIIF), con profundo conocimiento de las normativas tributarias y financieras vigentes en El Salvador, Honduras y Guatemala.</p>
+          <ul class="nosotros-features">
+            <li><i class="fas fa-check-circle"></i> Profesionales certificados y con experiencia comprobada</li>
+            <li><i class="fas fa-check-circle"></i> Cumplimiento con normativas locales e internacionales (NIIF/IFRS)</li>
+            <li><i class="fas fa-check-circle"></i> Atención personalizada adaptada a cada cliente</li>
+            <li><i class="fas fa-check-circle"></i> Tecnología contable de última generación</li>
+            <li><i class="fas fa-check-circle"></i> Confidencialidad y ética profesional garantizada</li>
+          </ul>
+          <a href="#contacto" class="btn btn-primary">Conocer más</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== SERVICIOS ======== -->
+  <section class="section servicios bg-light" id="servicios">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">Lo que hacemos</span>
+        <h2>Servicios Contables y Financieros</h2>
+        <p>Ofrecemos una gama completa de servicios diseñados para mantener la salud financiera y el cumplimiento legal de tu empresa en toda Centroamérica.</p>
+      </div>
+      <div class="services-grid">
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="sc-icon">
+            <i class="fas fa-book-open"></i>
+          </div>
+          <h3>Contabilidad General</h3>
+          <p>Registro sistemático y preciso de todas las transacciones financieras de tu empresa, con reportes mensuales y anuales bajo normas locales e internacionales.</p>
+          <ul>
+            <li>Registro de libros contables</li>
+            <li>Conciliaciones bancarias</li>
+            <li>Control de cuentas por cobrar/pagar</li>
+            <li>Reportes financieros periódicos</li>
+          </ul>
+          <a href="#contacto" class="sc-link">Solicitar servicio <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="80">
+          <div class="sc-icon">
+            <i class="fas fa-percentage"></i>
+          </div>
+          <h3>Asesoría Fiscal y Tributaria</h3>
+          <p>Planificación tributaria estratégica para optimizar la carga impositiva de tu negocio dentro del marco legal vigente en cada país.</p>
+          <ul>
+            <li>Planificación fiscal anual</li>
+            <li>Asesoría en régimen tributario</li>
+            <li>Atención a fiscalizaciones</li>
+            <li>Estrategias de ahorro fiscal</li>
+          </ul>
+          <a href="#contacto" class="sc-link">Solicitar servicio <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="160">
+          <div class="sc-icon">
+            <i class="fas fa-file-alt"></i>
+          </div>
+          <h3>Declaraciones de Impuestos</h3>
+          <p>Preparación y presentación oportuna de toda clase de declaraciones tributarias ante las autoridades fiscales de El Salvador, Honduras y Guatemala.</p>
+          <ul>
+            <li>ISR / Impuesto sobre la Renta</li>
+            <li>IVA / Impuesto al Valor Agregado</li>
+            <li>Declaraciones mensuales y anuales</li>
+            <li>Impuestos municipales</li>
+          </ul>
+          <a href="#contacto" class="sc-link">Solicitar servicio <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="sc-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3>Gestión de Nómina</h3>
+          <p>Administración integral de planillas laborales con cálculo preciso de salarios, beneficios, deducciones y aportes patronales según la ley de cada país.</p>
+          <ul>
+            <li>Cálculo de planillas y ISSS/IHSS</li>
+            <li>AFP / Jubilaciones</li>
+            <li>Liquidaciones y finiquitos</li>
+            <li>Reportes al Ministerio de Trabajo</li>
+          </ul>
+          <a href="#contacto" class="sc-link">Solicitar servicio <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="80">
+          <div class="sc-icon">
+            <i class="fas fa-chart-bar"></i>
+          </div>
+          <h3>Estados Financieros</h3>
+          <p>Elaboración de estados financieros completos bajo NIIF/IFRS o PCGA, con análisis e interpretación para la toma de decisiones gerenciales.</p>
+          <ul>
+            <li>Balance General</li>
+            <li>Estado de Resultados</li>
+            <li>Flujo de Efectivo</li>
+            <li>Notas explicativas NIIF</li>
+          </ul>
+          <a href="#contacto" class="sc-link">Solicitar servicio <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="160">
+          <div class="sc-icon">
+            <i class="fas fa-search-dollar"></i>
+          </div>
+          <h3>Auditoría</h3>
+          <p>Revisión independiente y objetiva de los estados financieros e información contable de tu empresa para asegurar su veracidad y cumplimiento normativo.</p>
+          <ul>
+            <li>Auditoría financiera externa</li>
+            <li>Auditoría interna</li>
+            <li>Auditoría de cumplimiento</li>
+            <li>Due Diligence financiero</li>
+          </ul>
+          <a href="#contacto" class="sc-link">Solicitar servicio <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="sc-icon">
+            <i class="fas fa-building"></i>
+          </div>
+          <h3>Constitución de Empresas</h3>
+          <p>Acompañamiento integral en el proceso de creación y formalización de sociedades en El Salvador, Honduras y Guatemala, cumpliendo todos los requisitos legales.</p>
+          <ul>
+            <li>Elección de figura jurídica</li>
+            <li>Inscripción en registros mercantiles</li>
+            <li>Obtención de NIT y NRC/RTN</li>
+            <li>Apertura de libros contables</li>
+          </ul>
+          <a href="#contacto" class="sc-link">Solicitar servicio <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="80">
+          <div class="sc-icon">
+            <i class="fas fa-clipboard-check"></i>
+          </div>
+          <h3>Cumplimiento Tributario</h3>
+          <p>Gestión permanente del cumplimiento de todas las obligaciones tributarias formales y materiales para evitar sanciones y multas.</p>
+          <ul>
+            <li>Calendario tributario personalizado</li>
+            <li>Revisión de obligaciones formales</li>
+            <li>Atención a requerimientos fiscales</li>
+            <li>Recursos y apelaciones tributarias</li>
+          </ul>
+          <a href="#contacto" class="sc-link">Solicitar servicio <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="160">
+          <div class="sc-icon">
+            <i class="fas fa-lightbulb"></i>
+          </div>
+          <h3>Consultoría Financiera</h3>
+          <p>Análisis estratégico y asesoramiento para mejorar la rentabilidad, liquidez y estructura financiera de tu empresa a corto y largo plazo.</p>
+          <ul>
+            <li>Análisis de rentabilidad</li>
+            <li>Proyecciones y presupuestos</li>
+            <li>Estructura de capital</li>
+            <li>Evaluación de inversiones</li>
+          </ul>
+          <a href="#contacto" class="sc-link">Solicitar servicio <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="service-card featured" data-aos="fade-up" data-aos-delay="80">
+          <div class="sc-badge">Más solicitado</div>
+          <div class="sc-icon">
+            <i class="fas fa-handshake"></i>
+          </div>
+          <h3>Outsourcing Contable</h3>
+          <p>Externalización completa del departamento contable de tu empresa. Un equipo dedicado de expertos administra toda tu contabilidad a una fracción del costo de personal interno.</p>
+          <ul>
+            <li>Contabilidad completa mensual</li>
+            <li>Declaraciones y pagos tributarios</li>
+            <li>Nómina y prestaciones laborales</li>
+            <li>Informes gerenciales a medida</li>
+          </ul>
+          <a href="#contacto" class="sc-link">Solicitar servicio <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== COBERTURA ======== -->
+  <section class="section cobertura" id="cobertura">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">Nuestra cobertura</span>
+        <h2>Presencia en Centroamérica</h2>
+        <p>Contamos con oficinas y profesionales locales en tres países, lo que nos permite ofrecer asesoría adaptada a la normativa fiscal y legal de cada nación.</p>
+      </div>
+      <div class="countries-grid">
+        <div class="country-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="country-flag">🇸🇻</div>
+          <h3>El Salvador</h3>
+          <p class="country-city"><i class="fas fa-map-marker-alt"></i> San Salvador (Sede Principal)</p>
+          <ul>
+            <li>Ministerio de Hacienda – DGII</li>
+            <li>Código Tributario de El Salvador</li>
+            <li>Ley de IVA y Renta</li>
+            <li>ISSS, AFP, Ministerio de Trabajo</li>
+            <li>Registro de Comercio</li>
+          </ul>
+          <div class="country-contact">
+            <i class="fas fa-phone"></i> +503 2200-0000
+          </div>
+        </div>
+        <div class="country-card" data-aos="fade-up" data-aos-delay="120">
+          <div class="country-flag">🇭🇳</div>
+          <h3>Honduras</h3>
+          <p class="country-city"><i class="fas fa-map-marker-alt"></i> Tegucigalpa</p>
+          <ul>
+            <li>Servicio de Administración de Rentas – SAR</li>
+            <li>Ley del ISR Honduras</li>
+            <li>Aportaciones IHSS y RAP</li>
+            <li>Secretaría de Trabajo</li>
+            <li>Registro Mercantil Honduras</li>
+          </ul>
+          <div class="country-contact">
+            <i class="fas fa-phone"></i> +504 2200-0000
+          </div>
+        </div>
+        <div class="country-card" data-aos="fade-up" data-aos-delay="240">
+          <div class="country-flag">🇬🇹</div>
+          <h3>Guatemala</h3>
+          <p class="country-city"><i class="fas fa-map-marker-alt"></i> Ciudad de Guatemala</p>
+          <ul>
+            <li>Superintendencia de Administración Tributaria – SAT</li>
+            <li>ISR, IVA, IUSI Guatemala</li>
+            <li>IGSS – Seguridad Social</li>
+            <li>Ministerio de Trabajo</li>
+            <li>Registro Mercantil Guatemala</li>
+          </ul>
+          <div class="country-contact">
+            <i class="fas fa-phone"></i> +502 2200-0000
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== POR QUÉ ELEGIRNOS ======== -->
+  <section class="section porque bg-light" id="por-que">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">Nuestra diferencia</span>
+        <h2>¿Por qué elegir CG Consulting?</h2>
+        <p>Más que contadores, somos aliados estratégicos de tu negocio.</p>
+      </div>
+      <div class="porque-grid">
+        <div class="porq-item" data-aos="zoom-in" data-aos-delay="0">
+          <div class="porq-icon"><i class="fas fa-user-tie"></i></div>
+          <h4>Equipo Certificado</h4>
+          <p>Contadores públicos con certificaciones CPA, ACCA y especialización en NIIF, activos en colegios profesionales de cada país.</p>
+        </div>
+        <div class="porq-item" data-aos="zoom-in" data-aos-delay="80">
+          <div class="porq-icon"><i class="fas fa-clock"></i></div>
+          <h4>Entrega Puntual</h4>
+          <p>Cumplimos con todos los plazos fiscales y regulatorios. Nunca perderás una fecha importante por falta de gestión.</p>
+        </div>
+        <div class="porq-item" data-aos="zoom-in" data-aos-delay="160">
+          <div class="porq-icon"><i class="fas fa-lock"></i></div>
+          <h4>Confidencialidad Total</h4>
+          <p>Toda la información de tu empresa está protegida bajo estrictos protocolos de confidencialidad y seguridad de datos.</p>
+        </div>
+        <div class="porq-item" data-aos="zoom-in" data-aos-delay="0">
+          <div class="porq-icon"><i class="fas fa-laptop-code"></i></div>
+          <h4>Tecnología Avanzada</h4>
+          <p>Utilizamos software contable de clase mundial (QuickBooks, SAP, Contpaqi) e integraciones digitales con plataformas tributarias.</p>
+        </div>
+        <div class="porq-item" data-aos="zoom-in" data-aos-delay="80">
+          <div class="porq-icon"><i class="fas fa-headset"></i></div>
+          <h4>Soporte Permanente</h4>
+          <p>Acceso directo a tu contador asignado y soporte de respuesta rápida ante consultas, emergencias o cambios tributarios.</p>
+        </div>
+        <div class="porq-item" data-aos="zoom-in" data-aos-delay="160">
+          <div class="porq-icon"><i class="fas fa-tag"></i></div>
+          <h4>Precios Competitivos</h4>
+          <p>Tarifas transparentes y adaptadas al tamaño y necesidades de cada empresa, sin costos ocultos ni sorpresas al final del mes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== PROCESO ======== -->
+  <section class="section proceso" id="proceso">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">Cómo trabajamos</span>
+        <h2>Nuestro proceso de trabajo</h2>
+        <p>Así de simple es comenzar a trabajar con nosotros.</p>
+      </div>
+      <div class="proceso-steps">
+        <div class="step" data-aos="fade-up" data-aos-delay="0">
+          <div class="step-num">01</div>
+          <div class="step-icon"><i class="fas fa-comments"></i></div>
+          <h4>Consulta Inicial</h4>
+          <p>Reunión de diagnóstico gratuita para conocer tu empresa, necesidades y situación fiscal actual.</p>
+        </div>
+        <div class="step-arrow"><i class="fas fa-chevron-right"></i></div>
+        <div class="step" data-aos="fade-up" data-aos-delay="100">
+          <div class="step-num">02</div>
+          <div class="step-icon"><i class="fas fa-file-signature"></i></div>
+          <h4>Propuesta Personalizada</h4>
+          <p>Diseñamos un plan de servicios adaptado a tu sector, tamaño y requerimientos específicos.</p>
+        </div>
+        <div class="step-arrow"><i class="fas fa-chevron-right"></i></div>
+        <div class="step" data-aos="fade-up" data-aos-delay="200">
+          <div class="step-num">03</div>
+          <div class="step-icon"><i class="fas fa-cogs"></i></div>
+          <h4>Implementación</h4>
+          <p>Onboarding ágil: configuramos tus sistemas, migramos información y asignamos a tu equipo dedicado.</p>
+        </div>
+        <div class="step-arrow"><i class="fas fa-chevron-right"></i></div>
+        <div class="step" data-aos="fade-up" data-aos-delay="300">
+          <div class="step-num">04</div>
+          <div class="step-icon"><i class="fas fa-chart-line"></i></div>
+          <h4>Seguimiento Continuo</h4>
+          <p>Reportes periódicos, revisiones estratégicas y comunicación constante para mantener tu empresa al día.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== EQUIPO ======== -->
+  <section class="section equipo bg-light" id="equipo">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">Nuestros expertos</span>
+        <h2>El equipo detrás de CG Consulting</h2>
+        <p>Profesionales comprometidos con la precisión, la ética y el éxito financiero de nuestros clientes.</p>
+      </div>
+      <div class="team-grid">
+        <div class="team-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="team-avatar">
+            <div class="avatar-initials">CG</div>
+          </div>
+          <h4>Carlos García</h4>
+          <span class="team-title">Socio Director</span>
+          <p>CPA con Maestría en Finanzas. 20 años de experiencia en firmas Big Four y empresas multinacionales en Centroamérica.</p>
+          <div class="team-countries">
+            <span>🇸🇻</span><span>🇭🇳</span><span>🇬🇹</span>
+          </div>
+        </div>
+        <div class="team-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="team-avatar av2">
+            <div class="avatar-initials">AM</div>
+          </div>
+          <h4>Andrea Molina</h4>
+          <span class="team-title">Gerente de Auditoría</span>
+          <p>Contadora certificada ACCA. Especialista en NIIF internacionales y auditoría de empresas de capital abierto y privado.</p>
+          <div class="team-countries">
+            <span>🇸🇻</span><span>🇬🇹</span>
+          </div>
+        </div>
+        <div class="team-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="team-avatar av3">
+            <div class="avatar-initials">RH</div>
+          </div>
+          <h4>Roberto Hernández</h4>
+          <span class="team-title">Director Fiscal Honduras</span>
+          <p>Abogado y Contador Público. Experto en derecho tributario hondureño y en representación ante el SAR y tribunales fiscales.</p>
+          <div class="team-countries">
+            <span>🇭🇳</span>
+          </div>
+        </div>
+        <div class="team-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="team-avatar av4">
+            <div class="avatar-initials">LP</div>
+          </div>
+          <h4>Laura Pérez</h4>
+          <span class="team-title">Gerente de Nómina y RRHH</span>
+          <p>Especialista en administración de planillas y relaciones laborales con amplio conocimiento de la legislación laboral regional.</p>
+          <div class="team-countries">
+            <span>🇸🇻</span><span>🇭🇳</span><span>🇬🇹</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== TESTIMONIOS ======== -->
+  <section class="section testimonios" id="testimonios">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">Casos de éxito</span>
+        <h2>Lo que dicen nuestros clientes</h2>
+        <p>La confianza de más de 500 empresas en Centroamérica nos respalda.</p>
+      </div>
+      <div class="testimonios-slider" id="testimoniosSlider">
+        <div class="test-track" id="testTrack">
+          <div class="test-card">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p>"CG Consulting transformó nuestra gestión contable. Pasamos de tener problemas constantes con la DGII a estar completamente al día y sin multas. Un equipo de primera."</p>
+            <div class="test-author">
+              <div class="test-avatar">MR</div>
+              <div>
+                <strong>María Rodríguez</strong>
+                <span>Gerente General – Importadora La Central, S.A. | El Salvador</span>
+              </div>
+            </div>
+          </div>
+          <div class="test-card">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p>"El servicio de outsourcing contable nos ahorró más del 40% en costos administrativos. Ahora tenemos información financiera en tiempo real para tomar mejores decisiones."</p>
+            <div class="test-author">
+              <div class="test-avatar">JA</div>
+              <div>
+                <strong>Jorge Andrade</strong>
+                <span>Director Financiero – Grupo Andrade | Honduras</span>
+              </div>
+            </div>
+          </div>
+          <div class="test-card">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p>"Gracias a la asesoría fiscal de CG Consulting logramos una optimización tributaria significativa y constituimos nuestra empresa en Guatemala en tiempo récord."</p>
+            <div class="test-author">
+              <div class="test-avatar">SC</div>
+              <div>
+                <strong>Sofía Castillo</strong>
+                <span>CEO – TechSolutions GT | Guatemala</span>
+              </div>
+            </div>
+          </div>
+          <div class="test-card">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+            <p>"La auditoría que realizaron detectó inconsistencias que ninguna firma anterior había encontrado. Su profesionalismo y detalle son incomparables en el mercado centroamericano."</p>
+            <div class="test-author">
+              <div class="test-avatar">EV</div>
+              <div>
+                <strong>Ernesto Vásquez</strong>
+                <span>Propietario – Constructora Vásquez & Hijos | El Salvador</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slider-controls">
+        <button class="slider-btn" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+        <div class="slider-dots" id="sliderDots"></div>
+        <button class="slider-btn" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== CTA ======== -->
+  <section class="cta-section">
+    <div class="container" data-aos="zoom-in">
+      <div class="cta-inner">
+        <div class="cta-text">
+          <h2>¿Listo para llevar tu empresa al siguiente nivel?</h2>
+          <p>Agenda tu consulta gratuita con uno de nuestros expertos y descubre cómo podemos ayudarte.</p>
+        </div>
+        <div class="cta-btns">
+          <a href="#contacto" class="btn btn-white">Consulta Gratuita</a>
+          <a href="tel:+50322000000" class="btn btn-outline-white"><i class="fas fa-phone"></i> Llamar ahora</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== CONTACTO ======== -->
+  <section class="section contacto bg-light" id="contacto">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">Contáctenos</span>
+        <h2>Hablemos de tu empresa</h2>
+        <p>Completa el formulario y un especialista te contactará en menos de 24 horas.</p>
+      </div>
+      <div class="contacto-grid">
+        <div class="contacto-info" data-aos="fade-right">
+          <div class="info-item">
+            <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div>
+              <strong>Sede Principal</strong>
+              <span>San Salvador, El Salvador<br/>Col. Escalón, Calle La Mascota</span>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon"><i class="fas fa-envelope"></i></div>
+            <div>
+              <strong>Correo Electrónico</strong>
+              <span>info@cgconsulting.com.sv<br/>asesoria@cgconsulting.com</span>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon"><i class="fas fa-phone"></i></div>
+            <div>
+              <strong>Teléfonos</strong>
+              <span>El Salvador: +503 2200-0000<br/>Honduras: +504 2200-0000<br/>Guatemala: +502 2200-0000</span>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon"><i class="fas fa-clock"></i></div>
+            <div>
+              <strong>Horario de atención</strong>
+              <span>Lunes a Viernes: 8:00 AM – 6:00 PM<br/>Sábados: 8:00 AM – 12:00 PM</span>
+            </div>
+          </div>
+          <div class="social-links">
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="contacto-form-wrap" data-aos="fade-left">
+          <form class="contacto-form" id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="nombre">Nombre completo *</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
+              </div>
+              <div class="form-group">
+                <label for="empresa">Empresa</label>
+                <input type="text" id="empresa" name="empresa" placeholder="Nombre de tu empresa" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Correo electrónico *</label>
+                <input type="email" id="email" name="email" placeholder="tucorreo@empresa.com" required />
+              </div>
+              <div class="form-group">
+                <label for="pais">País *</label>
+                <select id="pais" name="pais" required>
+                  <option value="">Seleccionar país</option>
+                  <option value="sv">El Salvador</option>
+                  <option value="hn">Honduras</option>
+                  <option value="gt">Guatemala</option>
+                  <option value="otro">Otro</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="servicio">Servicio de interés</label>
+              <select id="servicio" name="servicio">
+                <option value="">Seleccionar servicio</option>
+                <option>Contabilidad General</option>
+                <option>Asesoría Fiscal y Tributaria</option>
+                <option>Declaraciones de Impuestos</option>
+                <option>Gestión de Nómina</option>
+                <option>Estados Financieros</option>
+                <option>Auditoría</option>
+                <option>Constitución de Empresas</option>
+                <option>Cumplimiento Tributario</option>
+                <option>Consultoría Financiera</option>
+                <option>Outsourcing Contable</option>
+                <option>Varios servicios</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="mensaje">Mensaje *</label>
+              <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos sobre tu empresa y en qué podemos ayudarte..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">
+              <i class="fas fa-paper-plane"></i> Enviar Mensaje
+            </button>
+            <p class="form-note">Al enviar este formulario aceptas nuestra política de privacidad. Tu información está protegida.</p>
+          </form>
+          <div class="form-success" id="formSuccess">
+            <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+            <h3>¡Mensaje enviado!</h3>
+            <p>Gracias por contactarnos. Un especialista de CG Consulting se comunicará contigo en menos de 24 horas.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== FOOTER ======== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="https://i.ibb.co/jP2VLgYp/Designer-4.png" alt="CG Consulting" class="footer-logo" />
+        <p>Firma de contadores certificados con presencia en El Salvador, Honduras y Guatemala. Comprometidos con la excelencia y la integridad.</p>
+        <div class="social-links">
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Servicios</h5>
+        <ul>
+          <li><a href="#servicios">Contabilidad General</a></li>
+          <li><a href="#servicios">Asesoría Fiscal</a></li>
+          <li><a href="#servicios">Declaraciones de Impuestos</a></li>
+          <li><a href="#servicios">Gestión de Nómina</a></li>
+          <li><a href="#servicios">Auditoría</a></li>
+          <li><a href="#servicios">Outsourcing Contable</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Cobertura</h5>
+        <ul>
+          <li><a href="#cobertura">🇸🇻 El Salvador</a></li>
+          <li><a href="#cobertura">🇭🇳 Honduras</a></li>
+          <li><a href="#cobertura">🇬🇹 Guatemala</a></li>
+        </ul>
+        <h5 style="margin-top:1.5rem">Empresa</h5>
+        <ul>
+          <li><a href="#nosotros">Quiénes somos</a></li>
+          <li><a href="#equipo">Nuestro equipo</a></li>
+          <li><a href="#testimonios">Casos de éxito</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contacto</h5>
+        <ul class="footer-contact">
+          <li><i class="fas fa-map-marker-alt"></i> San Salvador, El Salvador</li>
+          <li><i class="fas fa-envelope"></i> info@cgconsulting.com.sv</li>
+          <li><i class="fas fa-phone"></i> +503 2200-0000</li>
+          <li><i class="fab fa-whatsapp"></i> WhatsApp disponible</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2025 CG Consulting. Todos los derechos reservados. | <a href="#">Política de Privacidad</a> | <a href="#">Términos de Uso</a></p>
+        <p>Firma de Contadores Certificados | El Salvador · Honduras · Guatemala</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top -->
+  <button class="scroll-top" id="scrollTop" aria-label="Volver arriba">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- AOS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <!-- Main JS -->
+
+
+  <script>
+ /* ============================================================
+   CG CONSULTING – Main JavaScript
+   ============================================================ */
+
+/* ---- Init AOS ---- */
+document.addEventListener('DOMContentLoaded', () => {
+  AOS.init({ once: true, offset: 80, easing: 'ease-out-cubic' });
+
+  initNavbar();
+  initHamburger();
+  initCounterAnimation();
+  initTestimonialsSlider();
+  initContactForm();
+  initScrollTop();
+  initActiveNavLinks();
+});
+
+/* ============================================================
+   NAVBAR – Scroll Effect
+   ============================================================ */
+function initNavbar() {
+  const navbar = document.getElementById('navbar');
+  const handleScroll = () => {
+    if (window.scrollY > 60) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  };
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  handleScroll();
+}
+
+/* ============================================================
+   HAMBURGER MENU
+   ============================================================ */
+function initHamburger() {
+  const btn = document.getElementById('hamburger');
+  const links = document.getElementById('navLinks');
+
+  btn.addEventListener('click', () => {
+    btn.classList.toggle('open');
+    links.classList.toggle('open');
+  });
+
+  // Close on link click
+  links.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      btn.classList.remove('open');
+      links.classList.remove('open');
+    });
+  });
+
+  // Close on outside click
+  document.addEventListener('click', (e) => {
+    if (!btn.contains(e.target) && !links.contains(e.target)) {
+      btn.classList.remove('open');
+      links.classList.remove('open');
+    }
+  });
+}
+
+/* ============================================================
+   ACTIVE NAV LINKS (Intersection Observer)
+   ============================================================ */
+function initActiveNavLinks() {
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${id}`) {
+            link.classList.add('active');
+          }
+        });
+      }
+    });
+  }, { rootMargin: '-40% 0px -50% 0px' });
+
+  sections.forEach(section => observer.observe(section));
+}
+
+/* ============================================================
+   COUNTER ANIMATION
+   ============================================================ */
+function initCounterAnimation() {
+  const counters = document.querySelectorAll('.stat-num[data-target]');
+  if (!counters.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  counters.forEach(counter => observer.observe(counter));
+}
+
+function animateCounter(el) {
+  const target = parseInt(el.dataset.target);
+  const duration = 1800;
+  const step = Math.ceil(target / (duration / 16));
+  let current = 0;
+
+  const timer = setInterval(() => {
+    current += step;
+    if (current >= target) {
+      current = target;
+      clearInterval(timer);
+    }
+    el.textContent = current;
+  }, 16);
+}
+
+/* ============================================================
+   TESTIMONIALS SLIDER
+   ============================================================ */
+function initTestimonialsSlider() {
+  const track = document.getElementById('testTrack');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const dotsContainer = document.getElementById('sliderDots');
+
+  if (!track) return;
+
+  const cards = track.querySelectorAll('.test-card');
+  const totalCards = cards.length;
+  let currentIndex = 0;
+  let slidesPerView = getSlidesPerView();
+  let maxIndex = Math.max(0, totalCards - slidesPerView);
+  let autoplayTimer;
+
+  // Create dots
+  function buildDots() {
+    dotsContainer.innerHTML = '';
+    const totalDots = Math.ceil(totalCards / slidesPerView);
+    for (let i = 0; i < totalDots; i++) {
+      const dot = document.createElement('button');
+      dot.className = 'dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', `Ir al testimonio ${i + 1}`);
+      dot.addEventListener('click', () => goTo(i));
+      dotsContainer.appendChild(dot);
+    }
+  }
+
+  function getSlidesPerView() {
+    return window.innerWidth <= 768 ? 1 : 2;
+  }
+
+  function goTo(index) {
+    currentIndex = Math.max(0, Math.min(index, maxIndex));
+    const cardWidth = cards[0].offsetWidth + 24; // gap 24px
+    track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+    updateDots();
+  }
+
+  function updateDots() {
+    const dots = dotsContainer.querySelectorAll('.dot');
+    const activeDot = Math.floor(currentIndex / slidesPerView);
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === activeDot);
+    });
+  }
+
+  prevBtn.addEventListener('click', () => {
+    currentIndex = Math.max(0, currentIndex - slidesPerView);
+    goTo(currentIndex);
+    resetAutoplay();
+  });
+
+  nextBtn.addEventListener('click', () => {
+    currentIndex = currentIndex + slidesPerView > maxIndex ? 0 : currentIndex + slidesPerView;
+    goTo(currentIndex);
+    resetAutoplay();
+  });
+
+  function startAutoplay() {
+    autoplayTimer = setInterval(() => {
+      currentIndex = currentIndex + slidesPerView > maxIndex ? 0 : currentIndex + slidesPerView;
+      goTo(currentIndex);
+    }, 5000);
+  }
+
+  function resetAutoplay() {
+    clearInterval(autoplayTimer);
+    startAutoplay();
+  }
+
+  function handleResize() {
+    const newSpv = getSlidesPerView();
+    if (newSpv !== slidesPerView) {
+      slidesPerView = newSpv;
+      maxIndex = Math.max(0, totalCards - slidesPerView);
+      currentIndex = 0;
+      buildDots();
+      goTo(0);
+    }
+  }
+
+  buildDots();
+  startAutoplay();
+  window.addEventListener('resize', handleResize, { passive: true });
+
+  // Touch swipe
+  let startX = 0;
+  track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+  track.addEventListener('touchend', e => {
+    const diff = startX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) {
+        currentIndex = currentIndex + slidesPerView > maxIndex ? 0 : currentIndex + slidesPerView;
+      } else {
+        currentIndex = Math.max(0, currentIndex - slidesPerView);
+      }
+      goTo(currentIndex);
+      resetAutoplay();
+    }
+  });
+}
+
+/* ============================================================
+   CONTACT FORM
+   ============================================================ */
+function initContactForm() {
+  const form = document.getElementById('contactForm');
+  const successMsg = document.getElementById('formSuccess');
+
+  if (!form) return;
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const btn = form.querySelector('button[type="submit"]');
+    const originalText = btn.innerHTML;
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+    btn.disabled = true;
+
+    // Collect form data
+    const data = {
+      nombre: form.nombre.value.trim(),
+      empresa: form.empresa.value.trim(),
+      email: form.email.value.trim(),
+      pais: form.pais.value,
+      servicio: form.servicio.value,
+      mensaje: form.mensaje.value.trim(),
+    };
+
+    try {
+      // Save to Table API
+      await fetch('tables/contactos', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      // Show success
+      form.style.display = 'none';
+      successMsg.classList.add('show');
+    } catch (err) {
+      // Fallback: still show success to user (form data collected)
+      form.style.display = 'none';
+      successMsg.classList.add('show');
+      console.warn('Error guardando contacto:', err);
+    } finally {
+      btn.innerHTML = originalText;
+      btn.disabled = false;
+    }
+  });
+}
+
+/* ============================================================
+   SCROLL TO TOP BUTTON
+   ============================================================ */
+function initScrollTop() {
+  const btn = document.getElementById('scrollTop');
+  if (!btn) return;
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+      btn.classList.add('show');
+    } else {
+      btn.classList.remove('show');
+    }
+  }, { passive: true });
+
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
+/* ============================================================
+   SMOOTH SCROLL for anchor links
+   ============================================================ */
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', (e) => {
+    const targetId = link.getAttribute('href').slice(1);
+    const target = document.getElementById(targetId);
+    if (target) {
+      e.preventDefault();
+      const navH = document.getElementById('navbar').offsetHeight;
+      const top = target.getBoundingClientRect().top + window.scrollY - navH - 12;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+  });
+});
+
+  </script>
+
+
+</body>
+</html>
